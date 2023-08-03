@@ -31,7 +31,7 @@ export class App extends Component {
     return (good / ((good + neutral + bad) / 100)).toFixed();
   };
   render() {
-    const { good, neutral, bad } = this.state;
+    const { good, neutural, bad } = this.state;
     return (
       <>
         <Section title="Please leave feedback">
@@ -42,10 +42,10 @@ export class App extends Component {
         </Section>
 
         <Section title="Statistic">
-          {good + neutral + bad > 0 ? (
+          {good + neutural + bad > 0 ? (
             <Statistics
               good={good}
-              neutral={neutral}
+              neutral={neutural}
               bad={bad}
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}

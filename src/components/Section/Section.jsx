@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const Section = ({ title, children }) => {
   return (
     <>
-      <h1 className={styles.heading}>{title}</h1>
+      <h2 className={styles.heading}>{title}</h2>
       {children}
     </>
   );

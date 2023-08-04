@@ -1,17 +1,27 @@
 import React from 'react';
 import styles from './FeedbackOptions.module.css';
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <ul className={styles.list_buttons}>
       {Object.keys(options).map(option => (
-        <li>
+        <li key={option}>
           <button onClick={() => onLeaveFeedback(option)}>
             {/* {`${option[0].toUpperCase() + option.slice(1)}`} */}
-            {option.replace(option[0],option[0].toUpperCase())}
+            {option.replace(option[0], option[0].toUpperCase())}
           </button>
         </li>
       ))}
     </ul>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.exact({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

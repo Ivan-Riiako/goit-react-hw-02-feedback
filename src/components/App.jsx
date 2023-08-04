@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
@@ -28,7 +27,7 @@ export class App extends Component {
     if (good <= 0) {
       return 0;
     }
-    return (good / ((good + neutral + bad) / 100)).toFixed();
+    return Math.round(good / ((good + neutral + bad) / 100));
   };
   render() {
     const { good, neutral, bad } = this.state;

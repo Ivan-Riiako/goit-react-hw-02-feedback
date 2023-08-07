@@ -7,10 +7,10 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     <ul className={styles.list_buttons}>
       {Object.keys(options).map(option => (
         <li key={option}>
-          <button onClick={() => onLeaveFeedback(option)}>
+          <button type='button' onClick={() => onLeaveFeedback(option)}>
             {/* {`${option[0].toUpperCase() + option.slice(1)}`} */}
             {option.replace(option[0], option[0].toUpperCase())}
-          </button>
+          </button >
         </li>
       ))}
     </ul>

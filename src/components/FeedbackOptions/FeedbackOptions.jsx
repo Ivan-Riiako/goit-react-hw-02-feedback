@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <ul className={styles.list_buttons}>
       {Object.keys(options).map(option => (
@@ -25,3 +25,5 @@ FeedbackOptions.propTypes = {
   }).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
+
+export default FeedbackOptions;
